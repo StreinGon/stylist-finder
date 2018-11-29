@@ -1,5 +1,8 @@
 'use strict';
-const strapi=require('strapi')
+const strapi=require('strapi');
+
+const keySecret = 'sk_test_qW0aKp0KALolr630jnlWegdi'
+const stripe = require('stripe')(keySecret)
 /**
  * A set of functions called "actions" for `User`
  */
@@ -29,11 +32,25 @@ module.exports = {
       return ctx.send(error)
     })
   },
-  subscribe: async (ctx) => {
-    return Wedding.create(ctx.request.body).then((wedding)=>{
-      return ctx.send(wedding)
-    }).catch(error=>{
-      return ctx.send(error)
+  payment: async (ctx) => {
+    const { token } = ctx.request.body;
+    stripe.charges.create({
+      amount: 1700, // create a charge for 1700 cents USD ($17)
+      currency: 'usd',
+      description: 'Bargain Basement Charge',
+      source: token,
+    }, (err, charge)=> {
+
+      if (err) 
+      { 
+        console.log(err)
+        ctx.send(err)
+      } 
+      else 
+      {
+        console.log(charge)
+        ctx.send(charge)
+      }
     })
   },
   schedule: async (ctx) => {

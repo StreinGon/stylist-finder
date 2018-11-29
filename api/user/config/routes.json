@@ -49,6 +49,16 @@
           "isAuthenticated"
         ]
       }
+    },
+    {
+      "method": "POST",
+      "path": "/payment",
+      "handler": "User.payment",
+      "config": {
+        "policies": [
+          "isAuthenticated"
+        ]
+      }
     }
   ]
 }

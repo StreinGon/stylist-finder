@@ -85,6 +85,15 @@
     "schedule": {
       "model": "schedule",
       "via": "user_id"
+    },
+    "City": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "language": {
+      "default": "",
+      "type": "string"
     }
   },
   "collectionName": "users-permissions_user"

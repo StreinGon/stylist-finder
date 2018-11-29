@@ -295,7 +295,6 @@ module.exports = {
       }
       const { invite }=ctx.request.query;
       const purse=await strapi.query("purse").create({balance:0});
-      const rating=await strapi.query("rating").create({count:0});
       if(invite){
         await strapi.query("referalcode").findOne({ code:invite }).then(code=>{
           if(code){
