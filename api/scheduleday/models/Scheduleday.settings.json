@@ -1,0 +1,33 @@
+{
+  "connection": "default",
+  "collectionName": "scheduleday",
+  "info": {
+    "name": "scheduleday",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Date": {
+      "default": "",
+      "type": "date",
+      "required": true,
+      "unique": true
+    },
+    "available_from": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "available_until": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "schedule": {
+      "model": "schedule",
+      "via": "scheduleDays"
+    }
+  }
+}

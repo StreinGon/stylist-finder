@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/scheduledays",
+      "handler": "Scheduleday.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/scheduledays/count",
+      "handler": "Scheduleday.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/scheduledays/:_id",
+      "handler": "Scheduleday.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/scheduledays",
+      "handler": "Scheduleday.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/scheduledays/:_id",
+      "handler": "Scheduleday.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/scheduledays/:_id",
+      "handler": "Scheduleday.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

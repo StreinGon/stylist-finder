@@ -1,0 +1,22 @@
+{
+  "connection": "default",
+  "collectionName": "purse",
+  "info": {
+    "name": "purse",
+    "description": "purse of user"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "balance": {
+      "default": "",
+      "type": "float"
+    },
+    "user_id": {
+      "model": "user",
+      "via": "purse",
+      "plugin": "users-permissions"
+    }
+  }
+}

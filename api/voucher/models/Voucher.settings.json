@@ -1,0 +1,21 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "voucher",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "code": {
+      "default": "",
+      "maxLength": 13,
+      "unique": true,
+      "minLength": 13,
+      "type": "string",
+      "required": true
+    }
+  }
+}

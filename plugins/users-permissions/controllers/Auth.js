@@ -293,9 +293,25 @@ module.exports = {
       if (!settings.email_confirmation) {
         params.confirmed = true;
       }
-
+      const { invite }=ctx.request.query;
+      const purse=await strapi.query("purse").create({balance:0});
+      const rating=await strapi.query("rating").create({count:0});
+      if(invite){
+        await strapi.query("referalcode").findOne({ code:invite }).then(code=>{
+          if(code){
+            params.invited_by=code.user_id;
+            purse.balance+=10.0;
+          }
+        });
+      }
+      params.registration_date=new Date();
+      params.purse=purse._id;
       const user = await strapi.query('user', 'users-permissions').create(params);
-
+      purse.user_id=user._id;
+      const ref=await strapi.query("referalcode").create({user_id:user._id,code:crypto.randomBytes(2).toString('hex')});
+      user.referalcode=ref;
+      user.save();
+      purse.save();
       const jwt = strapi.plugins['users-permissions'].services.jwt.issue(_.pick(user.toJSON ? user.toJSON() : user, ['_id', 'id']));
 
       if (settings.email_confirmation) {

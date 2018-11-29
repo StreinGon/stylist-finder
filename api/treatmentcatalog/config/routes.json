@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/treatmentcatalogs",
+      "handler": "Treatmentcatalog.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/treatmentcatalogs/count",
+      "handler": "Treatmentcatalog.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/treatmentcatalogs/:_id",
+      "handler": "Treatmentcatalog.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/treatmentcatalogs",
+      "handler": "Treatmentcatalog.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/treatmentcatalogs/:_id",
+      "handler": "Treatmentcatalog.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/treatmentcatalogs/:_id",
+      "handler": "Treatmentcatalog.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

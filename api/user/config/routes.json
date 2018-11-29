@@ -19,6 +19,36 @@
           "isAuthenticated"
         ]
       }
+    },
+    {
+      "method": "POST",
+      "path": "/mediaprod",
+      "handler": "User.mediaprod",
+      "config": {
+        "policies": [
+          "isAuthenticated"
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/wedding",
+      "handler": "User.wedding",
+      "config": {
+        "policies": [
+          "isAuthenticated"
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/schedule",
+      "handler": "User.schedule",
+      "config": {
+        "policies": [
+          "isAuthenticated"
+        ]
+      }
     }
   ]
 }

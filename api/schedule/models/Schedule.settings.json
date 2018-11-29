@@ -1,0 +1,26 @@
+{
+  "connection": "default",
+  "collectionName": "schedule",
+  "info": {
+    "name": "schedule",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "scheduleDays": {
+      "collection": "scheduleday",
+      "via": "schedule"
+    },
+    "user_id": {
+      "model": "user",
+      "via": "schedule",
+      "plugin": "users-permissions"
+    },
+    "Month": {
+      "default": "",
+      "type": "string"
+    }
+  }
+}

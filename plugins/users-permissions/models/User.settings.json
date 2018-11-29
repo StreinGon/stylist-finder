@@ -72,6 +72,19 @@
     "invited_by": {
       "model": "user",
       "plugin": "users-permissions"
+    },
+    "purse": {
+      "model": "purse",
+      "via": "user_id"
+    },
+    "registration_date": {
+      "default": "",
+      "type": "date",
+      "required": true
+    },
+    "schedule": {
+      "model": "schedule",
+      "via": "user_id"
     }
   },
   "collectionName": "users-permissions_user"
