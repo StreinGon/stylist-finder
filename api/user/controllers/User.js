@@ -34,23 +34,22 @@ module.exports = {
   },
   payment: async (ctx) => {
     const { token } = ctx.request.body;
-    stripe.charges.create({
+   return stripe.charges.create({
       amount: 1700, // create a charge for 1700 cents USD ($17)
       currency: 'usd',
       description: 'Bargain Basement Charge',
       source: token,
-    }, (err, charge)=> {
-
-      if (err) 
-      { 
-        console.log(err)
-        ctx.send(err)
-      } 
-      else 
-      {
-        console.log(charge)
-        ctx.send(charge)
-      }
+    }).then((err,charge)=>{
+        if (err) 
+        { 
+    
+          return ctx.send(err)
+        } 
+        else 
+        {
+          return ctx.send(charge)
+        }
+      
     })
   },
   schedule: async (ctx) => {
