@@ -1,0 +1,22 @@
+{
+  "connection": "default",
+  "collectionName": "card",
+  "info": {
+    "name": "card",
+    "description": "payment card"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "stripe_token": {
+      "default": "",
+      "type": "string"
+    },
+    "user_id": {
+      "model": "user",
+      "via": "cards",
+      "plugin": "users-permissions"
+    }
+  }
+}

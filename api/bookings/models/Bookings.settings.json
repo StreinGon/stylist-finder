@@ -1,0 +1,35 @@
+{
+  "connection": "default",
+  "collectionName": "bookings",
+  "info": {
+    "name": "bookings",
+    "description": "bookings of user"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Date": {
+      "default": "",
+      "type": "date",
+      "required": true
+    },
+    "Duration": {
+      "default": "",
+      "type": "float",
+      "required": true
+    },
+    "treatment": {
+      "model": "treatments"
+    },
+    "Address": {
+      "default": "",
+      "type": "string"
+    },
+    "user_id": {
+      "model": "user",
+      "via": "bookings",
+      "plugin": "users-permissions"
+    }
+  }
+}

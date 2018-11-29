@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/referalcodes",
+      "handler": "Referalcode.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/referalcodes/count",
+      "handler": "Referalcode.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/referalcodes/:_id",
+      "handler": "Referalcode.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/referalcodes",
+      "handler": "Referalcode.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/referalcodes/:_id",
+      "handler": "Referalcode.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/referalcodes/:_id",
+      "handler": "Referalcode.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

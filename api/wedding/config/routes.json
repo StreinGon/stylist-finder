@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/weddings",
+      "handler": "Wedding.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/weddings/count",
+      "handler": "Wedding.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/weddings/:_id",
+      "handler": "Wedding.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/weddings",
+      "handler": "Wedding.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/weddings/:_id",
+      "handler": "Wedding.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/weddings/:_id",
+      "handler": "Wedding.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

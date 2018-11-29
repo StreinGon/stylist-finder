@@ -1,0 +1,63 @@
+{
+  "connection": "default",
+  "collectionName": "mediaproduction",
+  "info": {
+    "name": "mediaproduction",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "message": {
+      "default": "",
+      "type": "string"
+    },
+    "FirstName": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "LastName": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "default": "",
+      "type": "email",
+      "required": true
+    },
+    "mobile": {
+      "default": "",
+      "type": "integer",
+      "required": true
+    },
+    "CompanyName": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "Date": {
+      "default": "",
+      "type": "date"
+    },
+    "Location": {
+      "default": "",
+      "type": "string"
+    },
+    "Interested": {
+      "default": "",
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "TV/Film",
+        "Other",
+        "Commercial",
+        "Photoshoot",
+        "Theatre",
+        "Special Effects"
+      ]
+    }
+  }
+}

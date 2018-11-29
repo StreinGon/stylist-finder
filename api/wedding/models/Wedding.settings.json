@@ -1,0 +1,58 @@
+{
+  "connection": "default",
+  "collectionName": "wedding",
+  "info": {
+    "name": "wedding",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Date": {
+      "default": "",
+      "type": "date"
+    },
+    "Location": {
+      "default": "",
+      "type": "string"
+    },
+    "FirstName": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "LastName": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "default": "",
+      "unique": true,
+      "type": "email",
+      "required": true
+    },
+    "budget_min": {
+      "default": "",
+      "type": "integer"
+    },
+    "budget_max": {
+      "default": "",
+      "type": "integer"
+    },
+    "NumberOfPeople": {
+      "default": "",
+      "type": "integer",
+      "required": true
+    },
+    "message": {
+      "default": "",
+      "type": "string"
+    },
+    "bridesmaid": {
+      "default": false,
+      "type": "boolean"
+    }
+  }
+}

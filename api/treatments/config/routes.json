@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/treatments",
+      "handler": "Treatments.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/treatments/count",
+      "handler": "Treatments.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/treatments/:_id",
+      "handler": "Treatments.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/treatments",
+      "handler": "Treatments.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/treatments/:_id",
+      "handler": "Treatments.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/treatments/:_id",
+      "handler": "Treatments.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

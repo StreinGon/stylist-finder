@@ -1,0 +1,35 @@
+{
+  "connection": "default",
+  "collectionName": "treatments",
+  "info": {
+    "name": "treatments",
+    "description": "treatments"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Title": {
+      "default": "",
+      "unique": true,
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "default": "",
+      "unique": true,
+      "type": "string",
+      "required": true
+    },
+    "cost": {
+      "default": 1,
+      "type": "float",
+      "required": true
+    },
+    "user_id": {
+      "collection": "user",
+      "via": "treatments",
+      "plugin": "users-permissions"
+    }
+  }
+}

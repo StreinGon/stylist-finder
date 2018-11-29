@@ -1,0 +1,26 @@
+{
+  "connection": "default",
+  "collectionName": "referalcode",
+  "info": {
+    "name": "referalcode",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "code": {
+      "default": "",
+      "maxLength": 4,
+      "unique": true,
+      "minLength": 4,
+      "type": "string",
+      "required": true
+    },
+    "user_id": {
+      "model": "user",
+      "via": "referalcode",
+      "plugin": "users-permissions"
+    }
+  }
+}

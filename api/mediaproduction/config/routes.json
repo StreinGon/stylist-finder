@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/mediaproductions",
+      "handler": "Mediaproduction.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/mediaproductions/count",
+      "handler": "Mediaproduction.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/mediaproductions/:_id",
+      "handler": "Mediaproduction.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/mediaproductions",
+      "handler": "Mediaproduction.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/mediaproductions/:_id",
+      "handler": "Mediaproduction.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/mediaproductions/:_id",
+      "handler": "Mediaproduction.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

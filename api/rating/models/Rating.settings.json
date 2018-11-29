@@ -1,0 +1,22 @@
+{
+  "connection": "default",
+  "collectionName": "rating",
+  "info": {
+    "name": "rating",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "user_id": {
+      "model": "user",
+      "via": "rating",
+      "plugin": "users-permissions"
+    },
+    "count": {
+      "default": "",
+      "type": "integer"
+    }
+  }
+}

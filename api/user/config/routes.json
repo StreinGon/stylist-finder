@@ -1,0 +1,24 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/profile",
+      "handler": "User.profile",
+      "config": {
+        "policies": [
+          "isAuthenticated"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/allStylist",
+      "handler": "User.allStylist",
+      "config": {
+        "policies": [
+          "isAuthenticated"
+        ]
+      }
+    }
+  ]
+}
