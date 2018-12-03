@@ -1,0 +1,26 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "token",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true,
+    "expires": "1m"
+  },
+  "attributes": {
+    "token": {
+      "default": "",
+      "type": "string"
+    },
+    "data": {
+      "default": "",
+      "type": "json"
+    },
+    "unconfirm_id": {
+      "default": "",
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/confirmtokens",
+      "handler": "Confirmtoken.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/confirmtokens/count",
+      "handler": "Confirmtoken.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/confirmtokens/:_id",
+      "handler": "Confirmtoken.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/confirmtokens",
+      "handler": "Confirmtoken.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/confirmtokens/:_id",
+      "handler": "Confirmtoken.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/confirmtokens/:_id",
+      "handler": "Confirmtoken.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

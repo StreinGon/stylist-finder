@@ -34,6 +34,10 @@
     "treatmentcatalog": {
       "model": "treatmentcatalog",
       "via": "treatments"
+    },
+    "Duration": {
+      "default": "",
+      "type": "float"
     }
   }
 }

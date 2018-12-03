@@ -94,6 +94,18 @@
     "language": {
       "default": "",
       "type": "string"
+    },
+    "subscribe_on": {
+      "model": "subscribe",
+      "via": "user_id"
+    },
+    "subscribers": {
+      "collection": "subscribe",
+      "via": "stylist_id"
+    },
+    "blogs": {
+      "collection": "blog",
+      "via": "creator"
     }
   },
   "collectionName": "users-permissions_user"

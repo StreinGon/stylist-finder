@@ -23,7 +23,22 @@
     {
       "method": "POST",
       "path": "/mediaprod",
-      "handler": "User.mediaprod",
+      "handler": "User.mediaprod"
+    },
+    {
+      "method": "POST",
+      "path": "/wedding",
+      "handler": "User.wedding"
+    },
+    {
+      "method": "GET",
+      "path": "/weddingconfirm",
+      "handler": "User.weddingconfirm"
+    },
+    {
+      "method": "POST",
+      "path": "/changepassword",
+      "handler": "User.changepassword",
       "config": {
         "policies": [
           "isAuthenticated"
@@ -31,14 +46,14 @@
       }
     },
     {
-      "method": "POST",
-      "path": "/wedding",
-      "handler": "User.wedding",
-      "config": {
-        "policies": [
-          "isAuthenticated"
-        ]
-      }
+      "method": "GET",
+      "path": "/passwordconfirm",
+      "handler": "User.passwordconfirm"
+    },
+    {
+      "method": "GET",
+      "path": "/mediaprodconfirm",
+      "handler": "User.mediaprodconfirm"
     },
     {
       "method": "POST",
@@ -54,6 +69,26 @@
       "method": "POST",
       "path": "/payment",
       "handler": "User.payment",
+      "config": {
+        "policies": [
+          "isAuthenticated"
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/treatment",
+      "handler": "User.treatment",
+      "config": {
+        "policies": [
+          "isAuthenticated"
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/book",
+      "handler": "User.book",
       "config": {
         "policies": [
           "isAuthenticated"

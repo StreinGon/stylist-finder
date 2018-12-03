@@ -1,0 +1,35 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "blog",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Title": {
+      "default": "",
+      "unique": true,
+      "type": "string",
+      "required": true
+    },
+    "Blog": {
+      "default": "",
+      "unique": true,
+      "type": "text",
+      "required": true
+    },
+    "type": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "creator": {
+      "model": "user",
+      "via": "blogs",
+      "plugin": "users-permissions"
+    }
+  }
+}

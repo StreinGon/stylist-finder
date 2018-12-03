@@ -1,0 +1,23 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "subscribe",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "user_id": {
+      "collection": "user",
+      "via": "subscribe_on",
+      "plugin": "users-permissions"
+    },
+    "stylist_id": {
+      "model": "user",
+      "via": "subscribers",
+      "plugin": "users-permissions"
+    }
+  }
+}

@@ -58,6 +58,10 @@
         "Theatre",
         "Special Effects"
       ]
+    },
+    "confirmed": {
+      "default": false,
+      "type": "boolean"
     }
   }
 }

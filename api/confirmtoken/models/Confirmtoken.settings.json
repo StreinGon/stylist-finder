@@ -1,0 +1,12 @@
+{
+  "connection": "default",
+  "collectionName": "confirmtoken",
+  "info": {
+    "name": "confirmToken",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {}
+}

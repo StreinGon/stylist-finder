@@ -53,6 +53,10 @@
     "bridesmaid": {
       "default": false,
       "type": "boolean"
+    },
+    "confirmed": {
+      "default": false,
+      "type": "boolean"
     }
   }
 }

@@ -17,6 +17,10 @@
     "count": {
       "default": "",
       "type": "integer"
+    },
+    "comment": {
+      "default": "",
+      "type": "text"
     }
   }
 }
