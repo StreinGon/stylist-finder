@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Lifecycle callbacks for the `Confirmtoken` model.
+ * Lifecycle callbacks for the `Subscribers` model.
  */
 
 module.exports = {

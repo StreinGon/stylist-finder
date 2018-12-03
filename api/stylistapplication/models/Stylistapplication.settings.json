@@ -1,0 +1,47 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "stylistapplication",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "email": {
+      "default": "",
+      "type": "email"
+    },
+    "firstQuestion": {
+      "default": "",
+      "type": "enumeration",
+      "required": true
+    },
+    "City": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "secondQuestion": {
+      "default": "",
+      "type": "enumeration",
+      "required": true
+    },
+    "thirdQuestion": {
+      "default": "",
+      "type": "enumeration",
+      "required": true
+    },
+    "FirstName": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "LastName": {
+      "default": "",
+      "type": "string",
+      "required": true
+    }
+  }
+}

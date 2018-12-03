@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Subscribe.js service
+ * Subscribers.js service
  *
  * @description: A set of functions similar to controller's actions to avoid code duplication.
  */
@@ -12,21 +12,21 @@ const _ = require('lodash');
 module.exports = {
 
   /**
-   * Promise to fetch all subscribes.
+   * Promise to fetch all subscribers.
    *
    * @return {Promise}
    */
 
   fetchAll: (params) => {
     // Convert `params` object to filters compatible with Mongo.
-    const filters = strapi.utils.models.convertParams('subscribe', params);
+    const filters = strapi.utils.models.convertParams('subscribers', params);
     // Select field to populate.
-    const populate = Subscribe.associations
+    const populate = Subscribers.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
 
-    return Subscribe
+    return Subscribers
       .find()
       .where(filters.where)
       .sort(filters.sort)
@@ -36,90 +36,90 @@ module.exports = {
   },
 
   /**
-   * Promise to fetch a/an subscribe.
+   * Promise to fetch a/an subscribers.
    *
    * @return {Promise}
    */
 
   fetch: (params) => {
     // Select field to populate.
-    const populate = Subscribe.associations
+    const populate = Subscribers.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
 
-    return Subscribe
-      .findOne(_.pick(params, _.keys(Subscribe.schema.paths)))
+    return Subscribers
+      .findOne(_.pick(params, _.keys(Subscribers.schema.paths)))
       .populate(populate);
   },
 
   /**
-   * Promise to count subscribes.
+   * Promise to count subscribers.
    *
    * @return {Promise}
    */
 
   count: (params) => {
     // Convert `params` object to filters compatible with Mongo.
-    const filters = strapi.utils.models.convertParams('subscribe', params);
+    const filters = strapi.utils.models.convertParams('subscribers', params);
 
-    return Subscribe
+    return Subscribers
       .count()
       .where(filters.where);
   },
 
   /**
-   * Promise to add a/an subscribe.
+   * Promise to add a/an subscribers.
    *
    * @return {Promise}
    */
 
   add: async (values) => {
     // Extract values related to relational data.
-    const relations = _.pick(values, Subscribe.associations.map(ast => ast.alias));
-    const data = _.omit(values, Subscribe.associations.map(ast => ast.alias));
+    const relations = _.pick(values, Subscribers.associations.map(ast => ast.alias));
+    const data = _.omit(values, Subscribers.associations.map(ast => ast.alias));
 
     // Create entry with no-relational data.
-    const entry = await Subscribe.create(data);
+    const entry = await Subscribers.create(data);
 
     // Create relational data and return the entry.
-    return Subscribe.updateRelations({ _id: entry.id, values: relations });
+    return Subscribers.updateRelations({ _id: entry.id, values: relations });
   },
 
   /**
-   * Promise to edit a/an subscribe.
+   * Promise to edit a/an subscribers.
    *
    * @return {Promise}
    */
 
   edit: async (params, values) => {
     // Extract values related to relational data.
-    const relations = _.pick(values, Subscribe.associations.map(a => a.alias));
-    const data = _.omit(values, Subscribe.associations.map(a => a.alias));
+    const relations = _.pick(values, Subscribers.associations.map(a => a.alias));
+    const data = _.omit(values, Subscribers.associations.map(a => a.alias));
 
     // Update entry with no-relational data.
-    const entry = await Subscribe.update(params, data, { multi: true });
+    const entry = await Subscribers.update(params, data, { multi: true });
 
     // Update relational data and return the entry.
-    return Subscribe.updateRelations(Object.assign(params, { values: relations }));
+    return Subscribers.updateRelations(Object.assign(params, { values: relations }));
   },
 
   /**
-   * Promise to remove a/an subscribe.
+   * Promise to remove a/an subscribers.
    *
    * @return {Promise}
    */
 
   remove: async params => {
     // Select field to populate.
-    const populate = Subscribe.associations
+    const populate = Subscribers.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
 
     // Note: To get the full response of Mongo, use the `remove()` method
     // or add spent the parameter `{ passRawResult: true }` as second argument.
-    const data = await Subscribe
+    const data = await Subscribers
       .findOneAndRemove(params, {})
       .populate(populate);
 
@@ -128,7 +128,7 @@ module.exports = {
     }
 
     await Promise.all(
-      Subscribe.associations.map(async association => {
+      Subscribers.associations.map(async association => {
         if (!association.via || !data._id) {
           return true;
         }
@@ -149,22 +149,22 @@ module.exports = {
   },
 
   /**
-   * Promise to search a/an subscribe.
+   * Promise to search a/an subscribers.
    *
    * @return {Promise}
    */
 
   search: async (params) => {
     // Convert `params` object to filters compatible with Mongo.
-    const filters = strapi.utils.models.convertParams('subscribe', params);
+    const filters = strapi.utils.models.convertParams('subscribers', params);
     // Select field to populate.
-    const populate = Subscribe.associations
+    const populate = Subscribers.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
 
-    const $or = Object.keys(Subscribe.attributes).reduce((acc, curr) => {
-      switch (Subscribe.attributes[curr].type) {
+    const $or = Object.keys(Subscribers.attributes).reduce((acc, curr) => {
+      switch (Subscribers.attributes[curr].type) {
         case 'integer':
         case 'float':
         case 'decimal':
@@ -188,7 +188,7 @@ module.exports = {
       }
     }, []);
 
-    return Subscribe
+    return Subscribers
       .find({ $or })
       .sort(filters.sort)
       .skip(filters.start)

@@ -2,48 +2,48 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/confirmtokens",
-      "handler": "Confirmtoken.find",
+      "path": "/stylistapplications",
+      "handler": "Stylistapplication.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/confirmtokens/count",
-      "handler": "Confirmtoken.count",
+      "path": "/stylistapplications/count",
+      "handler": "Stylistapplication.count",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/confirmtokens/:_id",
-      "handler": "Confirmtoken.findOne",
+      "path": "/stylistapplications/:_id",
+      "handler": "Stylistapplication.findOne",
       "config": {
         "policies": []
       }
     },
     {
       "method": "POST",
-      "path": "/confirmtokens",
-      "handler": "Confirmtoken.create",
+      "path": "/stylistapplications",
+      "handler": "Stylistapplication.create",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/confirmtokens/:_id",
-      "handler": "Confirmtoken.update",
+      "path": "/stylistapplications/:_id",
+      "handler": "Stylistapplication.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/confirmtokens/:_id",
-      "handler": "Confirmtoken.destroy",
+      "path": "/stylistapplications/:_id",
+      "handler": "Stylistapplication.destroy",
       "config": {
         "policies": []
       }

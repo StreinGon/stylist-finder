@@ -58,8 +58,8 @@
       "via": "user_id"
     },
     "treatments": {
-      "model": "treatments",
-      "via": "user_id"
+      "collection": "treatments",
+      "via": "users_id"
     },
     "cards": {
       "collection": "card",
@@ -94,14 +94,6 @@
     "language": {
       "default": "",
       "type": "string"
-    },
-    "subscribe_on": {
-      "model": "subscribe",
-      "via": "user_id"
-    },
-    "subscribers": {
-      "collection": "subscribe",
-      "via": "stylist_id"
     },
     "blogs": {
       "collection": "blog",

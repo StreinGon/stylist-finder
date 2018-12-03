@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Lifecycle callbacks for the `Subscribe` model.
+ * Lifecycle callbacks for the `Stylistapplication` model.
  */
 
 module.exports = {

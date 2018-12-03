@@ -1,6 +1,16 @@
 {
   "routes": [
     {
+      "method": "POST",
+      "path": "/subscribe",
+      "handler": "User.subscribe",
+      "config": {
+        "policies": [
+          "isAuthenticated"
+        ]
+      }
+    },
+    {
       "method": "GET",
       "path": "/profile",
       "handler": "User.profile",
@@ -57,8 +67,8 @@
     },
     {
       "method": "POST",
-      "path": "/schedule",
-      "handler": "User.schedule",
+      "path": "/createSchedule",
+      "handler": "User.createSchedule",
       "config": {
         "policies": [
           "isAuthenticated"
@@ -89,6 +99,61 @@
       "method": "POST",
       "path": "/book",
       "handler": "User.book",
+      "config": {
+        "policies": [
+          "isAuthenticated"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/getSingleStylist",
+      "handler": "User.getSingleStylist",
+      "config": {
+        "policies": [
+          "isAuthenticated"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/treatmentPage",
+      "handler": "User.treatmentPage",
+      "config": {
+        "policies": [
+          "isAuthenticated"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/treatmentStylist",
+      "handler": "User.treatmentStylist",
+      "config": {
+        "policies": [
+          "isAuthenticated"
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/unsubscribe",
+      "handler": "User.unsubscribe",
+      "config": {
+        "policies": [
+          "isAuthenticated"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/unsubscribeConfirm",
+      "handler": "User.unsubscribeConfirm"
+    },
+    {
+      "method": "POST",
+      "path": "/cancelBooking",
+      "handler": "User.cancelBooking",
       "config": {
         "policies": [
           "isAuthenticated"

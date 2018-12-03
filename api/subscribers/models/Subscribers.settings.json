@@ -1,0 +1,19 @@
+{
+  "connection": "default",
+  "collectionName": "Subrscribe",
+  "info": {
+    "name": "subscribers",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "subscriber_email": {
+      "default": "",
+      "unique": true,
+      "type": "email",
+      "required": true
+    }
+  }
+}

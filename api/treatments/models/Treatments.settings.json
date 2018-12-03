@@ -22,13 +22,14 @@
       "required": true
     },
     "cost": {
-      "default": 1,
+      "default": 0,
       "type": "float",
       "required": true
     },
-    "user_id": {
+    "users_id": {
       "collection": "user",
       "via": "treatments",
+      "dominant": true,
       "plugin": "users-permissions"
     },
     "treatmentcatalog": {

@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Confirmtoken.js service
+ * Stylistapplication.js service
  *
  * @description: A set of functions similar to controller's actions to avoid code duplication.
  */
@@ -12,21 +12,21 @@ const _ = require('lodash');
 module.exports = {
 
   /**
-   * Promise to fetch all confirmtokens.
+   * Promise to fetch all stylistapplications.
    *
    * @return {Promise}
    */
 
   fetchAll: (params) => {
     // Convert `params` object to filters compatible with Mongo.
-    const filters = strapi.utils.models.convertParams('confirmtoken', params);
+    const filters = strapi.utils.models.convertParams('stylistapplication', params);
     // Select field to populate.
-    const populate = Confirmtoken.associations
+    const populate = Stylistapplication.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
 
-    return Confirmtoken
+    return Stylistapplication
       .find()
       .where(filters.where)
       .sort(filters.sort)
@@ -36,90 +36,90 @@ module.exports = {
   },
 
   /**
-   * Promise to fetch a/an confirmtoken.
+   * Promise to fetch a/an stylistapplication.
    *
    * @return {Promise}
    */
 
   fetch: (params) => {
     // Select field to populate.
-    const populate = Confirmtoken.associations
+    const populate = Stylistapplication.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
 
-    return Confirmtoken
-      .findOne(_.pick(params, _.keys(Confirmtoken.schema.paths)))
+    return Stylistapplication
+      .findOne(_.pick(params, _.keys(Stylistapplication.schema.paths)))
       .populate(populate);
   },
 
   /**
-   * Promise to count confirmtokens.
+   * Promise to count stylistapplications.
    *
    * @return {Promise}
    */
 
   count: (params) => {
     // Convert `params` object to filters compatible with Mongo.
-    const filters = strapi.utils.models.convertParams('confirmtoken', params);
+    const filters = strapi.utils.models.convertParams('stylistapplication', params);
 
-    return Confirmtoken
+    return Stylistapplication
       .count()
       .where(filters.where);
   },
 
   /**
-   * Promise to add a/an confirmtoken.
+   * Promise to add a/an stylistapplication.
    *
    * @return {Promise}
    */
 
   add: async (values) => {
     // Extract values related to relational data.
-    const relations = _.pick(values, Confirmtoken.associations.map(ast => ast.alias));
-    const data = _.omit(values, Confirmtoken.associations.map(ast => ast.alias));
+    const relations = _.pick(values, Stylistapplication.associations.map(ast => ast.alias));
+    const data = _.omit(values, Stylistapplication.associations.map(ast => ast.alias));
 
     // Create entry with no-relational data.
-    const entry = await Confirmtoken.create(data);
+    const entry = await Stylistapplication.create(data);
 
     // Create relational data and return the entry.
-    return Confirmtoken.updateRelations({ _id: entry.id, values: relations });
+    return Stylistapplication.updateRelations({ _id: entry.id, values: relations });
   },
 
   /**
-   * Promise to edit a/an confirmtoken.
+   * Promise to edit a/an stylistapplication.
    *
    * @return {Promise}
    */
 
   edit: async (params, values) => {
     // Extract values related to relational data.
-    const relations = _.pick(values, Confirmtoken.associations.map(a => a.alias));
-    const data = _.omit(values, Confirmtoken.associations.map(a => a.alias));
+    const relations = _.pick(values, Stylistapplication.associations.map(a => a.alias));
+    const data = _.omit(values, Stylistapplication.associations.map(a => a.alias));
 
     // Update entry with no-relational data.
-    const entry = await Confirmtoken.update(params, data, { multi: true });
+    const entry = await Stylistapplication.update(params, data, { multi: true });
 
     // Update relational data and return the entry.
-    return Confirmtoken.updateRelations(Object.assign(params, { values: relations }));
+    return Stylistapplication.updateRelations(Object.assign(params, { values: relations }));
   },
 
   /**
-   * Promise to remove a/an confirmtoken.
+   * Promise to remove a/an stylistapplication.
    *
    * @return {Promise}
    */
 
   remove: async params => {
     // Select field to populate.
-    const populate = Confirmtoken.associations
+    const populate = Stylistapplication.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
 
     // Note: To get the full response of Mongo, use the `remove()` method
     // or add spent the parameter `{ passRawResult: true }` as second argument.
-    const data = await Confirmtoken
+    const data = await Stylistapplication
       .findOneAndRemove(params, {})
       .populate(populate);
 
@@ -128,7 +128,7 @@ module.exports = {
     }
 
     await Promise.all(
-      Confirmtoken.associations.map(async association => {
+      Stylistapplication.associations.map(async association => {
         if (!association.via || !data._id) {
           return true;
         }
@@ -149,22 +149,22 @@ module.exports = {
   },
 
   /**
-   * Promise to search a/an confirmtoken.
+   * Promise to search a/an stylistapplication.
    *
    * @return {Promise}
    */
 
   search: async (params) => {
     // Convert `params` object to filters compatible with Mongo.
-    const filters = strapi.utils.models.convertParams('confirmtoken', params);
+    const filters = strapi.utils.models.convertParams('stylistapplication', params);
     // Select field to populate.
-    const populate = Confirmtoken.associations
+    const populate = Stylistapplication.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
 
-    const $or = Object.keys(Confirmtoken.attributes).reduce((acc, curr) => {
-      switch (Confirmtoken.attributes[curr].type) {
+    const $or = Object.keys(Stylistapplication.attributes).reduce((acc, curr) => {
+      switch (Stylistapplication.attributes[curr].type) {
         case 'integer':
         case 'float':
         case 'decimal':
@@ -188,7 +188,7 @@ module.exports = {
       }
     }, []);
 
-    return Confirmtoken
+    return Stylistapplication
       .find({ $or })
       .sort(filters.sort)
       .skip(filters.start)

@@ -2,48 +2,48 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/subscribes",
-      "handler": "Subscribe.find",
+      "path": "/subscribers",
+      "handler": "Subscribers.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/subscribes/count",
-      "handler": "Subscribe.count",
+      "path": "/subscribers/count",
+      "handler": "Subscribers.count",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/subscribes/:_id",
-      "handler": "Subscribe.findOne",
+      "path": "/subscribers/:_id",
+      "handler": "Subscribers.findOne",
       "config": {
         "policies": []
       }
     },
     {
       "method": "POST",
-      "path": "/subscribes",
-      "handler": "Subscribe.create",
+      "path": "/subscribers",
+      "handler": "Subscribers.create",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/subscribes/:_id",
-      "handler": "Subscribe.update",
+      "path": "/subscribers/:_id",
+      "handler": "Subscribers.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/subscribes/:_id",
-      "handler": "Subscribe.destroy",
+      "path": "/subscribers/:_id",
+      "handler": "Subscribers.destroy",
       "config": {
         "policies": []
       }

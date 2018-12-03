@@ -1,6 +1,6 @@
 {
   "connection": "default",
-  "collectionName": "",
+  "collectionName": "treatmentcatalog",
   "info": {
     "name": "treatmentcatalog",
     "description": ""
@@ -10,10 +10,6 @@
   },
   "attributes": {
     "title": {
-      "default": "",
-      "type": "string"
-    },
-    "description": {
       "default": "",
       "type": "string"
     },
